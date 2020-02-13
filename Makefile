@@ -19,28 +19,28 @@ HEADER = libft/libft.h
 all: $(LIBFT) $(NAME) $(VISIO)
 
 $(NAME): $(OBJECTS)
-	gcc -o $(NAME) $(OBJECTS) -L$(LIBFT_DIR) -lft
+	@@gcc -o $(NAME) $(OBJECTS) -L$(LIBFT_DIR) -lft
 
 .FORCE:
 
 $(VISIO):
-	make -C $(VIS_DIR)
-	cp $(VIS_DIR)$(VISIO) .
+	@@make -C $(VIS_DIR)
+	@@cp $(VIS_DIR)$(VISIO) .
 
 $(LIBFT):.FORCE
-	make -C $(LIBFT_DIR)	
+	@@make -C $(LIBFT_DIR)	
 
 $(OBJECTS): %.o: %.c $(HEADERS)
-	gcc $(C_FLAGS) $(INC_DIR) -o $@ -c $<
+	@@gcc $(C_FLAGS) $(INC_DIR) -o $@ -c $<
 
 clean:
-	make clean -C $(VIS_DIR)
-	make clean -C $(LIBFT_DIR)
-	/bin/rm -f $(OBJECTS)
+	@@make clean -C $(VIS_DIR)
+	@@make clean -C $(LIBFT_DIR)
+	@@/bin/rm -f $(OBJECTS)
 fclean: clean
-	make fclean -C $(VIS_DIR)
-	make fclean -C $(LIBFT_DIR)
-	/bin/rm -f $(NAME)
-	/bin/rm -f $(VISIO)
+	@@make fclean -C $(VIS_DIR)
+	@@make fclean -C $(LIBFT_DIR)
+	@@/bin/rm -f $(NAME)
+	@@/bin/rm -f $(VISIO)
 re: fclean all
 

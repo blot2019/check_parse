@@ -6,13 +6,13 @@
 /*   By: gemerald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 23:00:48 by gemerald          #+#    #+#             */
-/*   Updated: 2020/01/27 23:01:21 by gemerald         ###   ########.fr       */
+/*   Updated: 2020/02/14 01:58:01 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
-t_hash_table 		*create_hash_cell(t_room *room)
+t_hash_table	*create_hash_cell(t_room *room)
 {
 	t_hash_table *tmp;
 
@@ -23,7 +23,7 @@ t_hash_table 		*create_hash_cell(t_room *room)
 	return (tmp);
 }
 
-int			create_hash_cell_chain(t_hash_table **cell)
+int				create_hash_cell_chain(t_hash_table **cell)
 {
 	t_hash_table *chain;
 
@@ -34,7 +34,7 @@ int			create_hash_cell_chain(t_hash_table **cell)
 	return (1);
 }
 
-void		hash_table_upload(t_lemin *lemin)
+void			hash_table_upload(t_lemin *lemin)
 {
 	int i;
 
@@ -43,7 +43,8 @@ void		hash_table_upload(t_lemin *lemin)
 	{
 		if (!lemin->table_hashes[lemin->rooms[i].hash])
 		{
-			lemin->table_hashes[lemin->rooms[i].hash] = create_hash_cell(&lemin->rooms[i]);
+			lemin->table_hashes[lemin->rooms[i].hash] =\
+				create_hash_cell(&lemin->rooms[i]);
 		}
 		else
 		{
@@ -53,7 +54,7 @@ void		hash_table_upload(t_lemin *lemin)
 	}
 }
 
-void		null_pointer_upload(t_lemin *lemin)
+void			null_pointer_upload(t_lemin *lemin)
 {
 	int i;
 

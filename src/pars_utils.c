@@ -6,7 +6,7 @@
 /*   By: gemerald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 23:08:45 by gemerald          #+#    #+#             */
-/*   Updated: 2020/01/27 23:10:44 by gemerald         ###   ########.fr       */
+/*   Updated: 2020/02/14 01:58:56 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,8 @@ int			init_lemin(t_lemin *lemin, char **spl)
 		return (make_free_lemin(lemin));
 	hash_table_upload(lemin);
 	if (!check_rooms(lemin))
-	{
-//		make_free_hash(lemin);
 		return (make_free_lemin(lemin));
-	}
 	if (!take_links(lemin, spl))
-	{
-//		make_free_hash(lemin);
 		return (make_free_lemin(lemin));
-	}
-//	make_free_hash(lemin);
 	return (1);
 }

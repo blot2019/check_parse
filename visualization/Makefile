@@ -29,17 +29,17 @@ OBJECTS := $(SRCS:.c=.o)
 HEADER = libft/libft.h
 all: $(NAME)
 $(NAME): $(OBJECTS)
-	make -C $(LIBFT_DIR)	
-	gcc -o $(NAME) $(OBJECTS) -L$(LIBFT_DIR) -lft -L. -lmlx -framework OpenGL -framework AppKit
+	@make -C $(LIBFT_DIR)	
+	@gcc -o $(NAME) $(OBJECTS) -L$(LIBFT_DIR) -lft -L. -lmlx -framework OpenGL -framework AppKit
 $(OBJECTS): %.o: %.c
-	gcc $(C_FLAGS) -o $@ -c $<
+	@gcc $(C_FLAGS) -o $@ -c $<
 
 clean:
-	make clean -C $(LIBFT_DIR)
-	/bin/rm -f $(OBJECTS)
+	@make clean -C $(LIBFT_DIR)
+	@/bin/rm -f $(OBJECTS)
 fclean: clean
-	make fclean -C $(LIBFT_DIR)
-	/bin/rm -f $(NAME)
-	/bin/rm -f libft.a
+	@make fclean -C $(LIBFT_DIR)
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f libft.a
 re: fclean all
 

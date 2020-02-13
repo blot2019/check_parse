@@ -10,16 +10,16 @@ HEADER = libft.h
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 $(OBJECTS):	%.o: %.c
-	gcc $(C_FLAGS) $(HEADER) -o $@ -c $<
+	@gcc $(C_FLAGS) $(HEADER) -o $@ -c $<
 
 clean:
-	/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
